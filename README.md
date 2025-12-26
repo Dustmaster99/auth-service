@@ -89,3 +89,33 @@ curl http://localhost:8001/validate \
 ```
 
 Saída esperada: `Chave de API inválida ou inativa`
+
+
+## Comandos para execução
+
+### Autenticação (execução local)
+
+```bash
+go run .
+
+Teste de conexão
+curl http://localhost:8001/health
+
+Exemplo de validação de chave já criada
+irm http://localhost:8001/validate -Headers @{
+  "Authorization" = "Bearer tm_key_d135a2d0fde75e68e96ac3d439d8fc5d68bff1601aacc6c52d5a2d563da208ba"
+}
+
+Build da imagem Docker
+docker build -t auth-service .
+
+Execução do container Docker
+docker run `
+  --name auth-service `
+  --env-file .env `
+  -p 8001:8001 `
+  auth-service
+
+Parar e remover o serviço
+docker stop auth-service
+docker rm auth-service
