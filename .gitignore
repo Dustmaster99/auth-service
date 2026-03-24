@@ -1,0 +1,49 @@
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Cache / binários Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Build artifacts
+bin/
+dist/
+build/
+
+# Cobertura e profiling
+coverage.out
+coverage.html
+*.coverprofile
+*.prof
+
+# Cache do Go
+/go/pkg/
+/go/bin/
+
+# IDEs / editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Python/cache eventual
+__pycache__/
+*.pyc

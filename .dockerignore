@@ -1,0 +1,45 @@
+# ========================
+# Git
+# ========================
+.git
+.gitignore
+
+# ========================
+# Variáveis de ambiente (NUNCA bake na imagem)
+# ========================
+.env
+.env.*
+!.env.example
+
+# ========================
+# Binários locais
+# ========================
+app
+*.exe
+*.out
+
+# ========================
+# Go (build artifacts)
+# ========================
+/vendor/
+/bin/
+
+# ========================
+# Testes e cobertura
+# ========================
+**/*_test.go
+coverage/
+coverage.out
+
+# ========================
+# IDE / SO
+# ========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ========================
+# Docker (opcional, mas recomendado)
+# ========================
+docker-compose.yml
