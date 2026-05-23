@@ -197,6 +197,15 @@ func main() {
 		"/health",
 		otelhttp.NewHandler(http.HandlerFunc(app.healthHandler), "GET /health"),
 	)
+	mux.Handle(
+		"/error",
+		otelhttp.NewHandler(
+			http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				http.Error(w, "erro forçado para teste", http.StatusInternalServerError)
+			}),
+			"GET /error",
+		),
+	)
 
 	mux.Handle(
 		"/validate",
